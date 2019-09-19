@@ -61,7 +61,7 @@ class Student
     DB[:conn].execute(sql, name).collect {|student| self.new_from_db(student)}[0]
   end
 
-  def self.update
+  def update
     sql = <<-SQL
     UPDATE students SET name = ?, grade = ?
     WHERE id = ?
